@@ -29,10 +29,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.546304, y: 3.89045, z: 11.016701}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &-8061146142716407829
 MeshFilter:
@@ -53,7 +52,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -96,7 +94,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1362d2313a9c54d41a984ee666fd868e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 0}
+  material: {fileID: 0}
+  vertices:
+  - {x: 0, y: -0.069453835, z: 0}
+  triangles: 
   xResolution: 20
   zResolution: 20
   meshScale: 1
@@ -108,3 +109,7 @@ MonoBehaviour:
   type: 0
   fallOffSize: 1
   seaLevel: 0
+  xStartPos: 0
+  zStartPos: 0
+  xEndPos: 0
+  zEndPos: 0

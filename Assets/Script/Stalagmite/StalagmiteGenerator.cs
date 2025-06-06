@@ -264,6 +264,33 @@ public class StalagmiteGenerator : AbstractMeshGenerator
         UpdateMesh();
     }
 
+    public void CloseMesh()
+    {
+        int centerIndex = vertices.Count;
+        Vector3 center = Vector3.zero;
+
+        for (int i = 0; i < segments; i++)
+            center += vertices[vertices.Count - 1 - i];
+
+        center /= segments;
+        vertices.Add(center);
+        numVertices++; // Account for new vertex
+
+        for (int i = 0; i < segments; i++)
+        {
+            int current = vertices.Count - 2 - i;
+            int next = (i == segments - 1) ? vertices.Count - 2 : current - 1;
+
+            triangles.Add(current);
+            triangles.Add(next);
+            triangles.Add(centerIndex);
+        }
+
+        numTriangles += segments; // Each segment added 1 triangle (3 indices)
+        UpdateMesh();
+        Debug.Log("Mesh closed with cap.");
+    }
+
     private void OnDrawGizmos()
     {
         //Gizmos.color = Color.black;

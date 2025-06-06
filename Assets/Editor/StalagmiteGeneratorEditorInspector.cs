@@ -34,6 +34,11 @@ public class StalagmiteGeneratorEditorInspector : Editor
         {
             Target.AirFlow();
         }
+
+        if (GUILayout.Button("Close Mesh"))
+        {
+            Target.CloseMesh();
+        }
     }
 
 

@@ -130,76 +130,13 @@ public class MeshGenerator_Prism : AbstractMeshGenerator
 
 	protected override void SetNormals ()	
 	{
-		SetGeneralNormals();
-		/*
-		//Front End
-		Vector3 frontNormals = new Vector3(0, 0, -1);
-		for (int i = 0; i < numSides; i++)
-		{
-			normals.Add(frontNormals);
-		}
-
-		//Sides
-		for (int i = 0; i < numSides; i++)
-		{
-			//All sides are rectangles. All normals are perpendicular to the face
-			int index = numSides + 4 * i;
-			Vector3 dirOne = vertices[index + 2] - vertices[index];
-			Vector3 dirTwo = vertices[index + 3] - vertices[index];
-
-			//Normals need to come out of the plane. Use the left hand rule to figure out the cross product
-
-			Vector3 normal = Vector3.Cross(dirTwo, dirOne).normalized;
-
-			for (int j = 0; j < 4; j++)
-			{
-				normals.Add(normal);
-			}
-		}
-
-		//Back End
-		Vector3 backNormals = new Vector3(0, 0, 1);
-		for (int i = 0; i < numSides; i++)
-		{
-			normals.Add(backNormals);
-		}*/
+		SetGeneralNormals();		
 	}
 
 	protected override void SetTangents ()	
 	{
 
-		SetGeneralTangents();
-		/*
-		//Front End
-		Vector4 frontTangents = new Vector4(1, 0, 0, -1);
-		for (int i = 0; i < numSides; i++)
-		{
-			tangents.Add(frontTangents);
-		}
-
-		//Sides
-		for (int i = 0; i < numSides; i++)
-		{
-			//All sides are rectangles. All normals are perpendicular to the face
-			int index = numSides + 4 * i;
-			Vector3 uDir = vertices[index + 2] - vertices[index];
-
-			Vector4 sideTangent = uDir.normalized;
-			sideTangent.w = 1;
-
-			for (int j = 0; j < 4; j++)
-			{
-				tangents.Add(sideTangent);
-			}
-		}
-
-		//Back End
-		Vector4 backTangents = new Vector4(1, 0, 0, 1);
-		for (int i = 0; i < numSides; i++)
-		{
-			tangents.Add(backTangents);
-		}
-		*/
+		SetGeneralTangents();		
 	}
 	
 

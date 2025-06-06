@@ -40,6 +40,21 @@ public abstract class AbstractMeshGenerator : MonoBehaviour
         CreateMesh();
     }
 
+    public void GenerateMesh()
+    {
+        meshFilter = GetComponent<MeshFilter>();
+        meshRenderer = GetComponent<MeshRenderer>();
+        meshCollider = GetComponent<MeshCollider>();
+        meshRenderer.material = material;
+
+        //Initialize
+        Init();
+        SetMeshNums();
+
+        //Create the mesh
+        CreateMesh();
+    }
+
     protected abstract void SetMeshNums();
 
     /// <summary>
@@ -248,4 +263,14 @@ public abstract class AbstractMeshGenerator : MonoBehaviour
             
         }
     }
+
+    #if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (!Application.isPlaying)
+        {
+            GenerateMesh();
+        }
+    }
+    #endif
 }
